@@ -1,0 +1,186 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+7",
+        "command": "python.execInTerminal-icon"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "C_Cpp.BuildAndRunFile"
+    },
+    {
+        "key": "f6",
+        "command": "-workbench.action.debug.pause",
+        "when": "debugState == 'running'"
+    },
+    {
+        "key": "f6",
+        "command": "-extension.CompileRun",
+        "when": "editorLangId == 'c' || editorLangId == 'cc' || editorLangId == 'cpp'"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "extension.vim_ctrl+v",
+        "when": "editorTextFocus && vim.active && vim.use<C-v> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-extension.vim_ctrl+v",
+        "when": "editorTextFocus && vim.active && vim.use<C-v> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "extension.vim_ctrl+c",
+        "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-extension.vim_ctrl+c",
+        "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "-extension.vim_ctrl+6",
+        "when": "editorTextFocus && vim.active && vim.use<C-6> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+delete",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "java.debug.runJavaFile"
+    },
+    {
+        "key": "ctrl+shift+alt+n",
+        "command": "workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-extension.vim_ctrl+b",
+        "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openLocalFile",
+        "when": "remoteFileDialogVisible"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFileFolder",
+        "when": "isMacNative && openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFolderViaWorkspace",
+        "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFile",
+        "when": "true"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.files.openFile"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.files.openFolderViaWorkspace"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "win+c",
+        "command": "-extension.vim_cmd+c",
+        "when": "editorTextFocus && vim.active && vim.overrideCopy && vim.use<D-c> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "extension.vim_ctrl+b"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "extension.vim_ctrl+f"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "-workbench.action.findInFiles"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-actions.find",
+        "when": "editorFocus || editorIsOpen"
+    }
+]

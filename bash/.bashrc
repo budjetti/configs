@@ -23,6 +23,7 @@ alias a='git add -A'
 alias p='git push'
 alias pl='git pull'
 alias c='git commit -m'
+alias l='ls -a'
 
 PS1='[\u@\h \W]\$ '
 

@@ -12,6 +12,10 @@ do
 		cp  bash/.bashrc ~/.bashrc
 		source ~/.bashrc
 	fi
+	if [ $var == "nvim" -o $var == "neovim" -o $var == "all" ]; then
+		cp neovim/init.lua ~/.config/nvim/init.lua
+		echo "nvim may need be restarted"
+	fi
 	if [ $var == "all" ]; then
 		break
 	fi

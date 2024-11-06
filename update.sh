@@ -1,13 +1,19 @@
 #!/bin/bash
 try_copy(){
+	# TODO make this thing work
+	NULL_DIR=$(diff $1 $2 | grep 'No such')
+	if [ "$NULL_DIR" != "" ]; then
+		echo "NOT FOUND $2"
+		return
+	fi
+
 	DIFF=$(diff $1 $2)
-	if [ "$DIFF" == "" ] 
-	then
-		echo "$2 is already up to date"
+	if [ "$DIFF" == "" ]; then
+		echo "UP-TO-DATE $2"
 		return
 	else
 		cp $1 $2
-		echo -n "Updated $2"
+		echo -n "UPDATED $2"
 	fi
 
 	# Check for the "-r" at the end. There's probably a cleaner way to do this
@@ -21,7 +27,7 @@ try_copy(){
 for var in "$@"
 do
 	# TODO overengineer this with structs
-	if [ $var == "bash" -o $var == "all" ]; then
+	if [ $var == "bash" ]; then
 		try_copy bash/.bashrc ~/.bashrc
 		source ~/.bashrc
 	fi
@@ -39,6 +45,7 @@ do
 	# TODO hypr
 	# TODO waybar
 	if [ $var == "all" ]; then
+		echo "WARNING: the 'all' argument does not include 'bash' or 'bash-dell'"
 		break
 	fi
 done

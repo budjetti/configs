@@ -25,6 +25,10 @@ do
 		try_copy bash/.bashrc ~/.bashrc
 		source ~/.bashrc
 	fi
+	if [ $var == "bash-dell" ]; then
+		try_copy bash/.bashrc-dell ~/.bashrc
+		source ~/.bashrc
+	fi
 	if [ $var == "i3" -o $var == "all" ]; then
 		try_copy i3/config ~/.config/i3/config -r
 	fi

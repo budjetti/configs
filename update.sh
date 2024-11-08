@@ -1,28 +1,44 @@
 #!/bin/bash
 try_copy(){
+	copy_from=$1
+	copy_to=$2
+	if [ $reverse == "TRUE" ]; then
+		copy_from=$2
+		copy_to=$1
+	fi
+
 	# TODO make this thing work
-	NULL_DIR=$(diff $1 $2 | grep 'No such')
+	NULL_DIR=$(diff $copy_from $copy_to | grep 'No such')
 	if [ "$NULL_DIR" != "" ]; then
-		echo "NOT FOUND $2"
+		echo "NOT FOUND $copy_to"
 		return
 	fi
 
-	DIFF=$(diff $1 $2)
+	DIFF=$(diff $copy_from $copy_to)
 	if [ "$DIFF" == "" ]; then
-		echo "UP-TO-DATE $2"
+		echo "UP-TO-DATE $copy_to"
 		return
 	else
-		cp $1 $2
-		echo -n "UPDATED $2"
+		cp $copy_from $copy_to
+		echo -n "UPDATED $copy_to"
 	fi
 
-	# Check for the "-r" at the end. There's probably a cleaner way to do this
-	if [ ! -z $3 ]; then
+	# Check for the "--restart" at the end. There's probably a cleaner way to do this
+	if [ ! -z $3 ] && [ $reverse == "FALSE" ]; then
 		echo " ... NEEDS RESTART"
 	else
 		echo ""
 	fi
 }
+
+# All Bash variables are strings
+reverse="FALSE"
+for var in "$@"
+do
+	if [ $var == "-r" -o $var == "--reverse" ]; then
+		reverse="TRUE"
+	fi
+done
 
 for var in "$@"
 do
@@ -36,10 +52,10 @@ do
 		source ~/.bashrc
 	fi
 	if [ $var == "i3" -o $var == "all" ]; then
-		try_copy i3/config ~/.config/i3/config -r
+		try_copy i3/config ~/.config/i3/config --restart
 	fi
 	if [ $var == "nvim" -o $var == "neovim" -o $var == "all" ]; then
-		try_copy neovim/init.lua ~/.config/nvim/init.lua -r
+		try_copy neovim/init.lua ~/.config/nvim/init.lua --restart
 	fi
 	# TODO vencord
 	# TODO hypr

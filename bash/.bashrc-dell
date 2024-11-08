@@ -100,6 +100,7 @@ alias a='git add -A'
 alias p='git push'
 alias pl='git pull'
 alias c='git commit -m'
+alias ac='git add -A && git commit -m'
 # alias l='ls -a'
 
 # Add an "alert" alias for long running commands.  Use like so:

@@ -102,6 +102,7 @@ alias p='git push'
 alias pl='git pull'
 alias c='git commit -m'
 alias ac='git add -A && git commit -m'
+alias e='exit'
 # alias l='ls -a'
 
 # magic monty

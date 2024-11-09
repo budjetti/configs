@@ -19,6 +19,13 @@ try_copy(){
 		echo "UP-TO-DATE $copy_to"
 		return
 	else
+		if [ $copy_from -ot $copy_to ]; then
+			read -r -p "Replace with older file? $copy_to [Y/n] " response
+			if [[ "$response" =~ ^([nN][oO]|[nN])$ ]]
+			then
+				return
+			fi
+		fi
 		cp $copy_from $copy_to
 		echo -n "UPDATED $copy_to"
 	fi
@@ -31,7 +38,6 @@ try_copy(){
 	fi
 }
 
-# All Bash variables are strings
 reverse="FALSE"
 for var in "$@"
 do

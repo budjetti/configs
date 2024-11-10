@@ -60,6 +60,9 @@ do
 	if [ $var == "i3" -o $var == "all" ]; then
 		try_copy i3/config ~/.config/i3/config --restart
 	fi
+	if [ $var == "i3status" -o $var == "all" ]; then
+		try_copy i3status/config ~/.config/i3status/config --restart
+	fi
 	if [ $var == "nvim" -o $var == "neovim" -o $var == "all" ]; then
 		try_copy neovim/init.lua ~/.config/nvim/init.lua --restart
 	fi

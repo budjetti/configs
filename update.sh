@@ -57,16 +57,37 @@ do
 		try_copy bash/.bashrc-dell ~/.bashrc
 		source ~/.bashrc
 	fi
+
 	if [ $var == "i3" -o $var == "all" ]; then
 		try_copy i3/config ~/.config/i3/config --restart
 	fi
 	if [ $var == "i3status" -o $var == "all" ]; then
 		try_copy i3status/config ~/.config/i3status/config --restart
 	fi
+
+	# TODO make arch/dell a flag or something
+	if [ $var == "i3-arch" -o $var == "all" ]; then
+		try_copy i3/config ~/etc/i3/config --restart
+	fi
+	if [ $var == "i3status-arch" -o $var == "all" ]; then
+		try_copy i3status/config ~/etc/i3status/config --restart
+	fi
+
 	if [ $var == "nvim" -o $var == "neovim" -o $var == "all" ]; then
 		try_copy neovim/init.lua ~/.config/nvim/init.lua --restart
 	fi
-	# TODO vencord
+
+	# partially broken
+	if [ $var == "vencord" -o $var == "all" ]; then
+		if [ -d ~/.var/app/com.discordapp.Discord/config/Vencord ]; then
+			try_copy vencord/ClearVision_v6_edit.theme.css ~/.var/app/com.discordapp.Discord/config/Vencord/themes --restart
+			try_copy vencord/settings.json ~/.var/app/com.discordapp.Discord/config/Vencord/settings --restart
+		else
+			#TODO add .deb
+			echo "no flatpak install of vencord found"
+		fi
+	fi
+
 	# TODO hypr
 	# TODO waybar
 	if [ $var == "all" ]; then

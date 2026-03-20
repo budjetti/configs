@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# USAGE
+# ./update.sh [target] [-r]
+# Updates target config file by replacing it with a copy from this repo
+# Use -r to instead update this repo with the local file
+# see code for the list of targets (bash-dell, etc.)
+
 try_copy(){
 	copy_from=$1
 	copy_to=$2
@@ -49,8 +56,8 @@ done
 for var in "$@"
 do
 	# TODO overengineer this with structs
-	if [ $var == "bash" ]; then
-		try_copy bash/.bashrc ~/.bashrc
+	if [ $var == "bash-arch" ]; then
+		try_copy bash/.bashrc-arch ~/.bashrc
 		source ~/.bashrc
 	fi
 	if [ $var == "bash-dell" ]; then

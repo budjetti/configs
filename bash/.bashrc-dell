@@ -99,20 +99,17 @@ alias sd='shutdown 0'
 alias brc-edit='sudo nvim ~/.bashrc'
 alias brc-reload='source ~/.bashrc'
 alias i3config-edit='sudo nvim /etc/i3/config'
-alias s='git status'
-alias a='git add -A'
-alias p='git push'
-alias pl='git pull'
-alias c='git commit -m'
-alias ac='git add -A && git commit -m'
 alias e='exit'
 # alias l='ls -a'
 
 alias gs='git status'
-alias gac='git add -A && git commit -m'
+alias gacm='git add -A && git commit -m'
 alias gp='git pull'
 alias gca='git commit --amend'
 alias gl='git log'
+
+alias b='cd ..'
+alias p='cd -'
 
 # magic monty
 # git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
